@@ -1,0 +1,23 @@
+<p>
+  <b>Name:</b>
+  <%=h @area.name %>
+</p>
+
+<p>
+  <b>Body:</b>
+  <%=h @area.body %>
+</p>
+
+<p>
+  <b>Location:</b>
+  <%=h @area.location %>
+</p>
+
+<p>
+  <b>Popuptext:</b>
+  <%=h @area.popuptext %>
+</p>
+
+
+<%= link_to 'Edit', edit_area_path(@area) %> |
+<%= link_to 'Back', areas_path %>

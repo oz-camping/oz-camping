@@ -1,0 +1,15 @@
+<h1>Areas</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+  </tr>
+
+<% @areas.each do |area| %>
+  <tr>
+    <td><%=h area.name %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />

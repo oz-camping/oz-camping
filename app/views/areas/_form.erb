@@ -1,0 +1,85 @@
+<table border="1">
+  <tr>
+    <td>
+      <p>
+        <%= f.label :name %><br />
+        <%= f.text_field :name %>
+      </p>
+      <p>
+        <%= f.label :body %><br />
+        <%= f.text_area :body, :cols => 26, :rows => 15 %>
+      </p>
+      <p>
+        <%= f.label :location %><br />
+        <%= f.text_field :location %>
+      </p>
+      <p>
+        <%= f.label :popuptext %><br />
+        <%= f.text_area :popuptext, :cols => 26, :rows => 8 %>
+    </p></td>
+    <td>
+
+    <script src="http://maps.google.com/maps?file=api&amp;v=2&amp;key=ABQIAAAAf-HhJyENb3Pby8oH3XPARxT2yXp_ZAY8_ufC3CFXhHIE1NvwkxQ_EccYJYji1BeiA65e5umP4mCwng&sensor=true_or_false"
+            type="text/javascript"></script>
+
+
+
+<div id="map" style="width: 600px; height: 700px"></div>
+
+
+
+<script type="text/javascript">
+//<![CDATA[
+
+
+////map
+
+
+var map = new GMap2(document.getElementById("map"));
+var start = "<%= a.location  %>";
+var latlong = start.split(",");
+
+var center = new GLatLng(latlong[0],latlong[1]);
+map.setCenter(center, 8);
+map.addControl(new GMapTypeControl(1));
+map.addControl(new GLargeMapControl());
+
+map.enableContinuousZoom();
+map.enableDoubleClickZoom();
+
+
+
+// "tiny" marker icon
+var icon = new GIcon();
+icon.image = "http://labs.google.com/ridefinder/images/mm_20_red.png";
+icon.shadow = "http://labs.google.com/ridefinder/images/mm_20_shadow.png";
+icon.iconSize = new GSize(12, 20);
+icon.shadowSize = new GSize(22, 20);
+icon.iconAnchor = new GPoint(6, 20);
+icon.infoWindowAnchor = new GPoint(5, 1);
+
+
+
+/////Draggable markers
+
+var point = new GLatLng(62,25.5);
+//var marker = new GMarker(center, {icon:icon, draggable: true});
+var marker = new GMarker(center, {draggable: true});
+map.addOverlay(marker);
+document.getElementById("area_location").value=marker.getPoint().toUrlValue();
+marker.enableDragging();
+
+GEvent.addListener(marker, "drag", function(){
+document.getElementById("area_location").value=marker.getPoint().toUrlValue();
+});
+
+
+
+
+
+//]]>
+</script>
+
+    </td>
+  </tr>
+</table>

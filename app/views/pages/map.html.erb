@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Home</title>
+    <link href="/stylesheets/main.css?1239710840" media="screen" rel="stylesheet" type="text/css" />
+<link href="/stylesheets/scaffold.css?1238929542" media="screen" rel="stylesheet" type="text/css" />
+    <script src="/javascripts/prototype.js?1238752135" type="text/javascript"></script>
+<script src="/javascripts/effects.js?1238752135" type="text/javascript"></script>
+
+<script src="/javascripts/dragdrop.js?1238752135" type="text/javascript"></script>
+<script src="/javascripts/controls.js?1238752135" type="text/javascript"></script>
+<script src="/javascripts/application.js?1238752135" type="text/javascript"></script>
+  </head>
+  <body  onload="initialize()" onunload="GUnload()"
+    <div id='pagewrapper'>
+      <div id='header'>
+        <p>Oz-Camping</p>
+      </div>
+
+      <div id='navbar'>
+        <ul>
+                      <li id='current'>
+
+              <a href="/home">Home</a>
+
+
+            </li>
+
+                      <li >
+
+              <a href="/messages/new?name=contact">Contact Us</a>
+
+
+
+            </li>
+
+                      <li >
+
+              <a href="/about">About</a>
+
+
+            </li>
+
+                      <li >
+
+              <a href="/Recipes">Recipes</a>
+
+
+            </li>
+
+                      <li >
+
+              <a href="/links/list?name=resources">Resources</a>
+
+
+            </li>
+
+                      <li >
+
+              <a href="/areas/list?name=Areas">Areas</a>
+
+
+            </li>
+
+                      <li >
+
+              <a href="/admin">Admin</a>
+
+
+            </li>
+
+                    <li>
+              <a href="/logout">Log Out</a>
+
+          </li>
+        </ul>
+
+      </div>
+      <div id='content'>
+        <h2></h2>
+
+
+
+
+
+Welcome to the start of Oz-Camping
+  <div id="map_canvas" style="width: 500px; height: 300px"></div>
+               <script src="http://maps.google.com/maps?file=api&amp;v=2&amp;key=ABQIAAAAf-HhJyENb3Pby8oH3XPARxT2yXp_ZAY8_ufC3CFXhHIE1NvwkxQ_EccYJYji1BeiA65e5umP4mCwng&sensor=true_or_false"
+            type="text/javascript"></script>
+    <script type="text/javascript">
+
+function initialize() {}
+  var map = new GMap2(document.getElementById("map_canvas"));
+  map.setCenter(new GLatLng(37.4419, -122.1419), 13);
+        map.addControl(new GSmallMapControl());
+        map.addControl(new GMapTypeControl());
+
+  // Add 10 markers to the map at random locations
+  var bounds = map.getBounds();
+  var southWest = bounds.getSouthWest();
+  var northEast = bounds.getNorthEast();
+  var lngSpan = northEast.lng() - southWest.lng();
+  var latSpan = northEast.lat() - southWest.lat();
+
+
+
+    </script>
+
+        <script type="text/javascript">
+        var marker1 = new GMarker(new GLatLng(-33.719771,150.320435));
+GEvent.addListener(marker1, "click", function() {marker1.openInfoWindowHtml("Pop up text2");});
+map.addOverlay(marker1);
+var marker2 = new GMarker(new GLatLng(-35.047987,150.67749));
+GEvent.addListener(marker2, "click", function() {marker2.openInfoWindowHtml("fdgsdf");});
+map.addOverlay(marker2);
+
+      </script>
+
+<hr>
+
+
+  <a href='#' id='edit'>Edit This Page</a>
+
+  <span class="in_place_editor_field" id="page_body_1_in_place_editor"><p>I love Anna<br />
+dsf<br />
+dsfgdsgjdf<br />
+dfgjdflkjglöfd  dfjgkldf  fdlg öldf df<br />
+fdölg lf fölh fd<br />
+
+ dflhj ldfh df<br />
+df ölhkj dfklh <br />
+f dhölkjdf öhlj</p></span><script type="text/javascript">
+//<![CDATA[
+new Ajax.InPlaceEditor('page_body_1_in_place_editor', '/viewer/set_page_body/1', {callback:function(form) { return Form.serialize(form) + '&authenticity_token=' + encodeURIComponent('29Kh2iMJUYb5afadAp04cZ3Q5WI62+yV4QPOUhSUn1c=') }, cols:80, externalControl:'edit', externalControlOnly:'true', loadTextURL:'/viewer/get_unformatted_text/1', rows:20})
+//]]>
+</script>
+
+
+
+
+
+        <p>Blue montains</p>
+
+        <p>Jerves Bay</p>
+
+
+
+
+
+      </div>
+      <div id='footer'>
+        <p>Oz-Camping</p>
+      </div>
+    </div>
+  </body>
+</html>

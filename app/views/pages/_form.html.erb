@@ -1,0 +1,45 @@
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </p>
+  <p>
+    <%= f.label :header %><br />
+    <%= f.text_field :header %>
+  </p>
+  <p>
+    <%= f.label :body %><br />
+    <%= f.text_area :body %>
+  </p>
+  <p>
+    <%= f.label :Admin? %><br />
+    <%= f.check_box :admin %>
+  </p>
+  <p>
+    <%= f.label :Redirect? %><br />
+    <%= f.check_box :redirect %>
+  </p>
+  <p>
+    <%= f.label :Action %><br />
+    <%= f.text_field :action_name %>
+  </p>
+  <p>
+    <%= f.label :Controller %><br />
+    <%= f.text_field :controller_name %>
+  </p>
+
+
+  <p>
+    <%= f.collection_select :parent_id, Page.find(:all), :id, :title, :include_blank => true %>
+  </p>
+  <p>
+    <b>Position</b><br/>
+    <%= f.text_field :position, :size => '3' %>
+  </p>
+  <p>
+    <b>Nav Label</b><br/>
+    <%= f.text_field :navlabel %>
+  </p>  

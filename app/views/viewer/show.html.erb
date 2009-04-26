@@ -1,0 +1,40 @@
+
+<%  if @page.parent %>
+  <%= link_to 'Back to '+@page.parent.navlabel, view_page_path(@page.parent.name) %>
+  <br>
+<% end %>
+
+<% unless @subpages.empty? %>
+  <div id='subnav'>
+    <ul>
+      <% for page in @subpages %>
+        <li><%= link_to page.navlabel, view_page_path(page.name) %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<%=  @page.header %>
+<%= @map %>
+<hr>
+<% if logged_in? %>
+
+  <a href='#' id='edit'>Edit This Page</a>
+
+  <%= in_place_editor_field :page, 'body', {},
+    {:rows => 20, :cols => 80, :external_control => 'edit', :external_control_only => true,
+    :load_text_url => {:controller => 'viewer', :action => 'get_unformatted_text', :id => @page.id}
+  } %>
+
+<% else %>
+
+  <%= @page.body %>
+
+<% end %>
+
+<% unless @areas.empty? %>
+      <% for area in @areas %>
+        <p><%= area.name %></p>
+      <% end %>
+<% end %>
+
